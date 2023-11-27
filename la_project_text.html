@@ -34,12 +34,21 @@
 								<p>
 									Nov 19, 2023
 								</p>
+
+
+								<h3>Story</h3>
 								<p>
-									
 									Parking in LA is a real problem. If you're around the Korea Town/Silverlake area like me, you've most likely experienced some difficulties with parking. In my case, it's even more challenging as I don't have a personal parking spot in my 
 									apartment building so even at night after a long day, I need to look for a street parking spot. It took me just a couple hours in LA to realize that parking was going to cause me a lot of headaches and that I needed to look for a solution.
-									<br><br>
-									So how can I solve this problem and make my life, and maybe others, easier in LA? I decided to build a <b>tool to help me find available spots and would optimize the routes I take anywhere so I spend less time looking for parking</b>.
+								</p>
+
+
+								<h3>Solution</h3>
+
+
+								<p>
+									
+									So how can I solve this problem and make my life, and maybe others, easier in LA? I decided to build a <b>tool to help me find available spots in real time and use analytics to optimize the routes I take anywhere so I spend less time looking for parking</b>.
 									Turns out that the <a href="https://www.laexpresspark.org/la-city-open-data/" target="_blank">LA City government</a> have a free API that gives access to the Parking Meter locations and occupancy updated with high frequency in the LA City.
 									So I leveraged that data to find the current occupancy (VACANT or OCCUPIED) of each of the 2807 parking meters that they provide data for.
 									<br><br>
@@ -49,14 +58,99 @@
 
 								<img src="images/input_la_project.jpg" alt="Description of the image" width="900" height="250">
 
-								<br>
+								<br><br>
 
 								<p>
-									You are going to have two maps right below your input widgets: On your left you'll see all the metered street parking spots that we have data for, and on the right you'll see the available parking spots within radius of your destination
+									You are going to have two maps right below your input widgets: On your left you'll see all the metered street parking spots that we have data for, and on the right you'll see the available parking spots that are within your specified radius of your destination
 									as well as the distance and time to get to your destination.
 								</p>
 
 								<img src="images/maps_la_project.jpg" alt="Description of the image" width="900" height="350">
+
+								<br><br>
+
+								<p>
+									Now the question is, <b>how do I optimize your route so you spend less time looking for parking?</b> Let's say you want to go to the Crypto.com arena, and the app is showing you 12 available spots in your acceptable proximity. <b>How do you know which one you go to?</b>
+								</p>
+
+								<h3>Route Optimization</h3>
+								<p>
+									I used some of the vast amount of historical parking data that LA City has archived to train a Machine Learning model that predicts the time a spot will remain vacant. In the below snippet, the time_to_occupied_in_mins is the variable of interest 
+									(I know I need to work on my variable naming lol)
+								</p>
+
+								<img src="images/datasetsample_la_proj.jpg" alt="Description of the image" width="900" height="100">
+
+								<br><br>
+
+								<p>
+									So with a good model, the idea is to optimize your route in a way that you're headed to the Street Parking Spot that is more likely to still be vacant by the time you arrive there. <b>This solution will save you a couple of minutes, 
+									and more importantly, you won't have to drive around looking for parking!</b> The natural next question is, what happens if I get there and the spot is taken? Easy! Open the app and refresh your search, since we're using live data it will give you the spots 
+									that are available at the moment!
+								</p>
+								<br>
+
+								<h3>Some interesting findings from my EDA</h3>
+
+								<p>
+									This is the average time the Street Parking Spots remain vacant grouped by hour. The y-axis is the hours of the day and the x-axis is average time in minutes.
+									So, the spots that are vacant from 8:00 AM until 12:00 PM on average remain vacant for a longer time, which probably makes sense because people are working or commuting less during those times...
+								</p>
+
+								<img src="images/plot_la_proj.jpg" alt="Description of the image" width="700" height="500">
+
+								<br><br>
+
+								<h3>Work in Progress</h3>
+
+								<p>
+									This project is work in progress. I'm still working on the model and the app deployment, but it's getting deployed soon! Stay Tuned!!
+									<br>
+									In the meantime, please check out the <b><a href="https://github.com/juanpi19/traffic_la_proj/blob/main/app.py" target="_blank">Streamlit's App Source Code</a></b>
+								</p>
+
+								<h3>Tech Stack</h3>
+
+							
+								<h4>APIs:</h4>
+								<ul>
+									<li>Bing Maps API</li>
+									<li>OpenWeatherMap API</li>
+									<li>LADOT Parking Meter Occupancy API</li>
+	
+								</ul>
+
+								<h4>DevOps</h4>
+								<ul>
+									<li>Github</li>
+									<li>Git</li>
+									<li>Docker</li>
+								</ul>
+
+								<h4>Databases</h4>
+								<ul>
+									<li>Sqlite3</li>
+								</ul>
+
+								<h4>App</h4>
+								<ul>
+									<li>Streamlit</li>
+									<li><a href="https://github.com/juanpi19/traffic_la_proj/blob/main/app.py" target="_blank">App Source Code</a></li>
+
+								</ul>
+
+								<h4>ML model</h4>
+								<ul>
+									<li>Scikit-Learn</li>
+									<li>Pandas</li>
+									<li>NumPy</li>
+								</ul>
+
+
+							
+							
+
+
 
 								
 								

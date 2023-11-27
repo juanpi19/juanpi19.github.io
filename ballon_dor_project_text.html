@@ -1,0 +1,160 @@
+<!DOCTYPE HTML>
+<!--
+	Stellar by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Who is Going to Win the Football Award Ballon D'or in 2023?</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<h1>Who is Going to Win the Football Award Ballon D'or in 2023?</h1>
+					
+					</header>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Content -->
+							<section id="content" class="main">
+								<span class="image main"><img src="images/pic04.jpg" alt="" /></span>
+								<h2>Who is Going to Win the Football Award Ballon D'or in 2023?</h2>
+
+								<p>
+									Nov 21, 2023
+								</p>
+
+
+								<H3>Story</H3>
+								<p>
+									I've watched soccer ever since I remember things... I grew up being a Barcelona fan, and therefore a Messi fan. I also grew up playing soccer and like many other kids,
+									I really wanted to play soccer professionally. I didn't play soccer professionally, but this beautiful sport opened many doors for me... I came to the United States to play 
+									<b><a href="https://shcbadgers.com/sports/mens-soccer/roster/juan-pablo-herrera/7088" target="_blank">college soccer</a></b> while pursuing a degree in Computer Information Systems. The best of both worlds!
+									<br><br>
+									With all this context in place, let's get into what actually is the <a href="https://en.wikipedia.org/wiki/Ballon_d'Or" target="_blank">Ballon D'or prize.</a> This award has historically been regarded
+									as the most prestigious and valuable individual award. The winner, however, it's chosen from a voting process and in recent times this has generated some critics towards the organizers accusing them to be biased 
+									towards attacking players or "most popular" teams. 
+									<br><br>
+									This past year, 2023, was especially tricky as this was the year Messi finally won the World Cup with Argentina but there were other players such as Mbappe and Haaland who did extremely well with their clubs during the season. 
+									So as a Data Analytics professional, I decided to take a data-driven approach, leaving all the biases from the voting process aside, and train a model that would pick the next winner of this award.
+
+								</p>
+
+
+								<h3>Solution</h3>
+
+								<p>
+									
+									I scraped 20 years worth of football data at a team and player level. I cleaned it and preprocessed it to make it model ready. My variable of interest was whether the player had won the award that year or not. So a classification problem.
+
+									<br><br>
+									<b><a href="https://github.com/juanpi19/ballon-d-or-logistic-regression/blob/main/Modeling.ipynb" target="_blank"> Check out the Model's Source Code!!</a></b><br>
+									<b><a href="https://github.com/juanpi19/ballon-d-or-logistic-regression/blob/main/balon_dor_winner_regression_analysis.ipynb" target="_blank"> Check out the Data Collection Process!!</a></b>
+
+								</p>
+
+								<br>
+
+
+
+								<h3>
+									Let's see what my model predicted...
+								</h3>
+
+								<img src="images/ballon_dor_proj.jpg" alt="Description of the image" width="700" height="450"><br>
+
+								<p>Although the model gave Haaland a good probability to win, the model predicted Messi to be the winner of Ballon D'or 2023</p>
+
+
+								<h3>Who Won???</h3>
+								<img src="images/ballon_dor_winner.jpg" alt="Description of the image" width="700" height="450"><br><br>
+
+
+
+								
+								<h3>Technical Aspects</h3>
+
+								<p>
+									This project taught me a lot. The main challenge was that my data was very <a href="https://developers.google.com/machine-learning/data-prep/construct/sampling-splitting/imbalanced-data" target="_blank">imbalanced</a>.
+									Each season's worth of data that I scraped had only one award winner but had over 3000 players that did not win the award. How do you deal with that?
+									<br><br>
+									In my case, I chose a method called Synthetic Minority Oversampling Technique (SMOTE), which is a data augmentation technique (increases the size of your training set) for the minority class. In my case, the minority class were the award winners for which 
+									I only had 20 data points out of 68k rows of data.
+									<br><br>
+									The main algorithm that I used was Logistic Regression, as this is a binary classification problem and I was interested in assigning a winning probability to each player in the dataset.
+
+								</p>
+
+
+
+								<h3>Tech Stacks</h3>
+
+								<h4>ML model:</h4>
+								<ul>
+									<li>Python</li>
+									<li>Statsmodels Package</li>
+									<li>Scikit-Learn</li>
+									<li>Pandas</li>
+									<li>NumPy</li>
+								</ul>
+
+								<h4>Web Scraping:</h4>
+								<ul>
+									<li>BeautifulSoup</li>
+									<li>Requests</li>
+								</ul>
+							
+
+								<h4>DevOps:</h4>
+								<ul>
+									<li>Git</li>
+									<li>Github</li>
+								</ul>
+
+
+
+								
+
+								
+								
+						
+
+								
+
+								<br>
+
+
+						
+					
+							</section>
+
+					</div>
+
+				<!-- Footer -->
+
+				
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
