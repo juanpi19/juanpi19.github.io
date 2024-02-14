@@ -119,12 +119,7 @@
 									In the meantime, please check out the <b><a href="https://github.com/juanpi19/traffic_la_proj/blob/main/app.py" target="_blank">Streamlit's App Source Code</a></b>
 								</p>-->
 
-								<h3>Need of a Model?</h3>
-								<p>
-									Many 
-								</p>
-
-
+								<h2>Different Aspects and Decisions About the Project</h2>
 
 								<h3>Data Available</h3>
 								<p>
@@ -136,22 +131,83 @@
 
 
 								<p>
-									I also collected historical weather data for the year 2023. Each row represented the weather the weather in LA per day, some of the features that the dataset 
+									I also collected historical weather data for the year 2023. Each row represented the weather in LA per day, some of the features that the dataset 
 									includes are shown below
 								</p>
 
 								<img src="images/weather_la_project.jpg" alt="Description of the image" width="800" height="200">
-								<br>
+								<br><br>
 
+								<h3>Need of a Model?</h3>
+								<p>
+									The first question that I had was whether or not I needed a predictive model in the first place. When live data is available with such high frequency it is important to be clear about what problem 
+									I am trying to solve and what value it is adding. The question I asked myself was the following: Do I want to know if a street parking spot will be available or taken or do I want to know 
+									ho much longer, an available parking spot will remain available. <br><br>
+
+									If I just wanted to know if the street parking spot was going to be available or not, I did not see the need of a predictive model as you could arrive to your destination and refresh the live data API
+									to know what street parking spots were available at that precise moment. <br><br>
+
+									If the goal was to reduce the overall time you spend going from your origin to your final destination, including the time searching for parking, then it made sense to have a model that predicted the 
+									amount to time available parking spots in proximity to your destination will remain open, that way you can head directly to the free parking spot and then you can walk to your final destination. 
+									This was the approach I took! <br><br>
+
+									So you may have questions about what my variable of interest was and how I arrive to it. My variable of interest was the delta in minutes between the time a spot became available and became occupied again.
+									For example: If a parking spot becase available at 5:20 PM and someone parked in the spot again at 5:30, then the time the spot remained available was 10 minutes. This was the information I wanted to predict. 
+
+
+								</p>
 
 
 								<h3>Modeling Decision</h3>
 
+								<p>
+									Now that I knew what I wanted to predict and I had historical data, the goals was to engineer features that would allow the model to find the hidden patterns in the data enhancing 
+									the predictive abilities. I fitted an XGBOOST regressor on 25M rows of data, achieving an R2 of 0.52 on testing data and a RMSQ of 4.8, so off by 4.8 minutes on average. Below you will find a chart displaying 
+									the importance of each feature the model was trained on.
+								</p>
+
+								<img src="images/feature_importance_la_proj.jpg" alt="Description of the image" width="700" height="450">
+
+
+
+								<h3>Model Deployment</h3>
+								<p>
+									The app is a Streamlit app hosted on Github. I needed a way to use my trained model in this application so others could get the predictions on the parking spots. In order to achieve this, 
+									I serialized the model, serialization is the process of converting the structure of the model into a sequence of bytes that the computer can understand, using pickle. Pickle is a Python library that 
+									allows you to serialize different objects, in this case the structure of the trained ML model. <br><br>
+
+									The whole idea of serializing the model is that we can utilize it with the parameters that have been estimated from the training process. So on the Streamlit app, I could also use pickle to deserialize the model 
+									and convert it back to its original structure, and with this original structure we can make predictions!
+									
+								</p>
 
 
 
 
 								<h3>Testing Model Efficacy</h3>
+
+								<p>
+									So all of these look great, but... Does it actually work? Being completely honest, I don't know... and by working I mean, you're actually able to spend less time searching for street parking in DTLA. 
+									What I do know is that I'll figure it out. I find it hard to believe that this app will gain enough traffic and feedback from people to be able to understand if people are benefiting from this. However, 
+									I have traffic data from the Bing Maps API and I could leverage that to simulate users and understand whether they were able to find a spot or not. I haven't started working on this.
+
+								</p>
+
+
+								<h3>Next Steps</h3>
+								<p>
+									- Test whether it works, and improve it. <br>
+									- Understand how we can make the user experience more smooth when using the app 
+			
+								</p>
+
+								
+								<h3>Final Notes</h3>
+								<p>
+									- This app will ask you if it can know your location. This is for the "Current Location" features. This app does not collect data. <br>
+									- You will need to remove some pop ups as the app opens a new tab to display Google Maps, and in order to open Google Maps you need to remove this 
+			
+								</p>
 
 
 
@@ -160,38 +216,37 @@
 
 							
 								<h4>APIs:</h4>
-								<ul>
-									<li>Bing Maps API</li>
-									<li>OpenWeatherMap API</li>
-									<li>LADOT Parking Meter Occupancy API</li>
+						
+								<li>Bing Maps API</li>
+								<li>OpenWeatherMap API</li>
+								<li>LADOT Parking Meter Occupancy API</li>
+
+								<br>
 	
-								</ul>
+								
 
 								<h4>DevOps</h4>
-								<ul>
-									<li>Github</li>
-									<li>Git</li>
-									<li>Docker</li>
-								</ul>
+				
+								<li>Github</li>
+								<li>Git</li>
 
-								<h4>Databases</h4>
-								<ul>
-									<li>Sqlite3</li>
-								</ul>
+								<br>
 
 								<h4>App</h4>
-								<ul>
-									<li>Streamlit</li>
-									<li><a href="https://github.com/juanpi19/traffic_la_proj/blob/main/app.py" target="_blank">App Source Code</a></li>
+								
+								<li>Streamlit</li>
+								<li><a href="https://github.com/juanpi19/traffic_la_proj/blob/main/app.py" target="_blank">App Source Code</a></li>
 
-								</ul>
+								<br>
+
+								
 
 								<h4>ML model</h4>
-								<ul>
-									<li>Scikit-Learn</li>
-									<li>Pandas</li>
-									<li>NumPy</li>
-								</ul>
+							
+								<li>Scikit-Learn</li>
+								<li>Pandas</li>
+								<li>NumPy</li>
+						
 
 
 							
