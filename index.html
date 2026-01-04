@@ -3,83 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Personal Website</title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-            line-height: 1.4;
-            color: #333;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 16px;
-        }
-        h1 {
-            font-size: 2em;
-            margin: 0 0 0.3em 0;
-        }
-        h2 {
-            font-size: 1.5em;
-            margin: 0.7em 0 0.3em 0;
-            padding-top: 0.3em;
-            border-top: 1px solid rgba(0, 0, 0, 0.1);
-        }
-        p {
-            margin: 0 0 0.3em 0;
-        }
-        a {
-            color: #0066cc;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .contact-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        .contact-list li, ol li {
-            margin-bottom: 0.2em;
-        }
-        ol {
-            margin: 0;
-            padding-left: 20px;
-        }
-        .section {
-            padding-bottom: 0.7em;
-        }
-    </style>
+    <title>Juan Herrera - Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="section">
-        <h1>Juan Herrera</h1>
-        <p>I'm Juan. I'm a Data Scientist at NBCUniversal and a full time graduate student at University of Southern California.</p>
-        <p>I've worked at Nestlé Purina, Eventellect. While there, I worked on building machine learning models</p>
-    </div>
-    
-    <div class="section">
-        <h2>Cool Projects</h2>
-        <ol>
-            <li><a href="https://github.com/juanpi19/causal-attribution-analysis" target="_blank">Causal Inference in Retail</a></li>
-            <li><a href="https://downtown-la-parking-solution.streamlit.app/" target="_blank">ParkSmart: A solution to the street parking issue in Los Angeles</a></li>
-        </ol>
-    </div>
-    
-    <div class="section">
-        <h2>Blog</h2>
-        <ol>
-            <li><a href="https://medium.com/@JuanPabloHerrera/thoughts-about-modeling-on-clustered-data-1-2-fbfb7c2645b0" target="_blank">Clustered Data and Linear Models: Avoiding the Traps</a></li>
-            <li><a href="https://medium.com/@JuanPabloHerrera/use-python-and-web-scraping-to-go-on-your-dream-vacation-ba965687e4b5" target="_blank">Use Technology to go on your dream vacation</a></li>
-        </ol>
-    </div>
-    
-    <div class="section">
-        <h2>Contact</h2>
-        <ul class="contact-list">
-            <li><a href="https://github.com/juanpi19" target="_blank">Github</a></li>
-            <li><a href="https://x.com/JuanHerr19" target="_blank">Twitter</a></li>
-            <li><a href="https://www.linkedin.com/in/juanherreras/" target="_blank">LinkedIn</a></li>
-        </ul>
+    <div class="container">
+        <header>
+            <h1>Juan Herrera</h1>
+            <nav>
+                <a href="#about">About</a>
+                <a href="#work">Work</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="about" class="section">
+                <h2>About</h2>
+                <p>I'm a product data scientist at Ramp.
+                In the past, I worked at NBCUniversal, Nestlé Purina and Eventellect.</p>
+                <p>I spend a lot of time understanding how things work, and
+                i write about it on <a href="https://medium.com/@JuanPabloHerrera" target="_blank">Medium</a> and <a href="https://juanpherrera.substack.com/" target="_blank">Substack</a></p>
+            </section>
+
+            <section id="work" class="section">
+                <h2>Work</h2>
+                <div class="work-list">
+                    <h3>Blogs</h3>
+                    <div class="work-year">
+                        <h4>2025</h4>
+                        <ul>
+                            <li>
+                                <span class="date">Nov 16</span>
+                                <a href="https://medium.com/@JuanPabloHerrera/measuring-retention-9fe15649f33f" target="_blank">Measuring Retention</a>
+                            </li>
+                            <li>
+                                <span class="date">Jun 11</span>
+                                <a href="https://medium.com/@JuanPabloHerrera/mcp-ai-productivity-05e09618d192" target="_blank">MCP, AI, Productivity</a>
+                            </li>
+                            <li>
+                                <span class="date">Jan 26</span>
+                                <a href="https://medium.com/@JuanPabloHerrera/a-b-testing-streamlit-and-statsig-30ba3532d999" target="_blank">A/B Testing, Streamlit, and Statsig</a>
+                            </li>
+                            <li>
+                                <span class="date">Jan 5</span>
+                                <a href="https://medium.com/nerd-for-tech/simulating-the-pitfalls-of-peeking-in-a-b-testing-05824fae245c" target="_blank">Simulating the Pitfalls of Peeking in A/B Testing</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="work-year">
+                        <h4>2024</h4>
+                        <ul>
+                            <li>
+                                <span class="date">Dec 12</span>
+                                <a href="https://medium.com/nerd-for-tech/late-deliveries-and-ratings-propensity-score-matching-approach-dfa333b330ec" target="_blank">Late Deliveries and Ratings</a>
+                            </li>
+                            <li>
+                                <span class="date">Dec 01</span>
+                                <a href="https://medium.com/@JuanPabloHerrera/why-interrupted-time-series-might-be-your-new-favorite-data-tool-399d260a9cd9" target="_blank">Why Interrupted Time Series Might Be Your New Favorite Data Tool</a>
+                            </li>
+                            <li>
+                                <span class="date">Aug 25</span>
+                                <a href="https://medium.com/@JuanPabloHerrera/thoughts-about-modeling-on-clustered-data-1-2-fbfb7c2645b0" target="_blank">Clustered Data and Linear Models: Avoiding the Traps</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="work-list">
+                    <h3>Projects</h3>
+                    <ul>
+                        <li>
+                            <span class="date">2025</span>
+                            <a href="https://github.com/juanpi19/causal-attribution-analysis" target="_blank">Causal Inference in Retail</a>
+                        </li>
+                        <li>
+                            <span class="date">2024</span>
+                            <a href="https://parking-smart.streamlit.app/" target="_blank">ParkSmart: A solution to the street parking issue in Los Angeles</a>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <ul class="contact-list">
+                <li><a href="https://github.com/juanpi19" target="_blank">Github</a></li>
+                <li><a href="https://x.com/JuanHerr19" target="_blank">Twitter</a></li>
+                <li><a href="https://www.linkedin.com/in/juanherreras/" target="_blank">LinkedIn</a></li>
+            </ul>
+        </footer>
     </div>
 </body>
 </html>
