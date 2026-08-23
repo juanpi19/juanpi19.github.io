@@ -136,7 +136,8 @@ h2 {
     margin-bottom: 20px;
     padding: 0 0 9px;
     border-bottom: 2px solid var(--accent);
-    font-size: 0.76rem;
+    font-size: 0.74rem;
+    font-weight: 500;
     line-height: 1;
     color: var(--accent);
     text-transform: uppercase;
