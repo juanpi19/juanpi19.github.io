@@ -1,0 +1,55 @@
+---
+import { posts, projects } from '../data/content';
+import '../styles/global.css';
+const socials = [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/juanherreras/' }, { label: 'GitHub', href: 'https://github.com/juanpi19' }, { label: 'X', href: 'https://x.com/JuanHerr19' }];
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Juan Herrera. Working in data science at Ramp in New York City. Writing about data, experiments, and how things work." />
+    <meta name="theme-color" content="#f7f5ef" />
+    <link rel="canonical" href="https://juanherrera.dev/" />
+    <meta property="og:title" content="Juan Herrera — Data & curiosity" />
+    <meta property="og:description" content="Notes on data, experiments, and understanding how things work." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://juanherrera.dev/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <title>Juan Herrera — Data & curiosity</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="landscape landscape-left" aria-hidden="true"></div>
+    <div class="landscape landscape-right" aria-hidden="true"></div>
+    <div class="page">
+      <header>
+        <h1>Juan Herrera</h1>
+      </header>
+      <main id="main">
+        <section class="intro" aria-label="About me">
+          <p>I work in data science at <a href="https://ramp.com/" target="_blank" rel="noopener noreferrer">Ramp</a> in New York City.</p>
+          <p class="previous">Previously data science at <a href="https://www.nbcuniversal.com/" target="_blank" rel="noopener noreferrer">NBCUniversal</a> and <a href="https://www.purina.com/" target="_blank" rel="noopener noreferrer">Nestlé Purina</a>, and analytics at <a href="https://www.eventellect.com/" target="_blank" rel="noopener noreferrer">Eventellect</a>.</p>
+          <p class="previous">I like to understand how things work, and write about what I learn.</p>
+        </section>
+        <section aria-labelledby="projects-heading">
+          <h2 id="projects-heading">Projects</h2>
+          <ul class="work-list">
+            <li><a href="https://ramp.com/blog/ramp-travel-flight-savings" target="_blank" rel="noopener noreferrer">Flight Savings for Ramp Travel</a><p class="detail">Ramp</p></li>
+            {projects.map((project, index) => <li><a href={project.href} target="_blank" rel="noopener noreferrer">{index === 0 ? 'Causal Inference in Retail' : 'ParkSmart'}</a><p class="detail">{index === 0 ? 'Personal · Causal inference · 2025' : 'Personal · Street parking in Los Angeles · 2024'}</p></li>)}
+          </ul>
+        </section>
+        <section aria-labelledby="writing-heading">
+          <h2 id="writing-heading">Writing</h2>
+          <ul class="writing-list">{posts.slice(0, 3).map(post => <li><a href={post.href} target="_blank" rel="noopener noreferrer">{post.title}</a><p class="detail">{post.date}, {post.year}</p></li>)}</ul>
+          {posts.length > 3 && <details class="more-posts">
+            <summary><span class="show-more">Show more</span><span class="show-less">Show less</span></summary>
+            <ul class="writing-list">{posts.slice(3).map(post => <li><a href={post.href} target="_blank" rel="noopener noreferrer">{post.title}</a><p class="detail">{post.date}, {post.year}</p></li>)}</ul>
+          </details>}
+          <p class="elsewhere">More on <a href="https://medium.com/@JuanPabloHerrera" target="_blank" rel="noopener noreferrer">Medium</a> and <a href="https://juanpherrera.substack.com/" target="_blank" rel="noopener noreferrer">Substack</a>.</p>
+        </section>
+      </main>
+      <footer><nav aria-label="Social profiles">{socials.map(social => <a href={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</nav><p>Always something to learn.</p></footer>
+    </div>
+  </body>
+</html>
