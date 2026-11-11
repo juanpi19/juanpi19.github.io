@@ -51,5 +51,8 @@ const socials = [{ label: 'LinkedIn', href: 'https://www.linkedin.com/in/juanher
       </main>
       <footer><nav aria-label="Social profiles">{socials.map(social => <a href={social.href} target="_blank" rel="noopener noreferrer">{social.label}</a>)}</nav><p>Always something to learn.</p></footer>
     </div>
+    {import.meta.env.PROD && (
+      <script is:inline type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"20c28f3ad94d4b9a85ee458308f6c49f"}'></script>
+    )}
   </body>
 </html>

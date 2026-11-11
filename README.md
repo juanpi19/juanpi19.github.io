@@ -1,6 +1,6 @@
 # Juan Herrera
 
-Personal website at https://juanherrera.dev, built with Astro and TypeScript. Output is static HTML and CSS; no client JavaScript is needed.
+Personal website at https://juanherrera.dev, built with Astro and TypeScript. Output is static HTML and CSS, with Cloudflare Web Analytics loaded only in production builds. Local development does not send analytics.
 
 ## Development
 
